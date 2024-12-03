@@ -17,7 +17,14 @@ const createUser = async (req, res) => {
                 }
             );
         }
-        console.log('isCheckUsername: ',isCheckUsername);
+
+        if (!isCheckUsername) {
+            return res.status(400).json({
+                status: "ERR",
+                code: 400,
+                message: 'Tên đăng nhập phải chứa ký tự đặc biệt',
+            });
+        }
 
         const response = await UserService.createUser(req.body);
         return res.status(200).json(response);
@@ -35,8 +42,6 @@ const createUser = async (req, res) => {
 const loginUser = async (req, res) => {
     try {
         const { username, password } = req.body;
-        const reg = /[!@#$%^&*()_+\-=\[\]{}|;:',.<>?/`~]/;
-        const isCheckUsername = reg.test(username); // Kí tự đặc biệt
         
         if (!username || !password) {
             return res.status(400).json(
@@ -46,10 +51,8 @@ const loginUser = async (req, res) => {
                 }
             );
         }
-
         const response = await UserService.loginUser(req.body);
         const { refresh_token, ...newResponse } = response;
-        // console.log('response: ', response);
         res.cookie('refresh_token', refresh_token, {
             HttpOnly: true,
             Secure: true
