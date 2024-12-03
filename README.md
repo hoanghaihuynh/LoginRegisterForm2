@@ -55,7 +55,7 @@
 * Giao diện người dùng sẽ chạy ở địa chỉ mặc định (ví dụ: http://localhost:3000).
 
 ## Cấu trúc thư mục
-plaintext
+
 LoginRegisterForm2
 ├── api/
 │   └── src/
