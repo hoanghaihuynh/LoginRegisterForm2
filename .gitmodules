@@ -1,0 +1,3 @@
+[submodule "LoginRegisterFrontEnd"]
+	path = LoginRegisterFrontEnd
+	url = https://github.com/hoanghaihuynh/LoginRegisterFrontEnd.git
