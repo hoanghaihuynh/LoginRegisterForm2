@@ -6,40 +6,37 @@ const createUser = (newUser) => {
     return new Promise(async (resolve, reject) => {
         const { username, password } = newUser;
         try {
-            const checkUsername = await User.findOne({
-                username: username 
-            });
+            // Check if the username already exists
+            const checkUsername = await User.findOne({ username: username });
             if (checkUsername !== null) {
-                resolve({
+                return resolve({
                     status: "ERR",
                     message: 'Username bị trùng',
-                })
+                });
             }
 
-            // mã hóa password
+            // Hash the password if username is available
             let hash = bcrypt.hashSync(password, 10);
-            // console.log('hash: ',hash); 
 
-            // tạo user mới với password đc mh
+            // Create new user with the hashed password
             const createdUser = await User.create({
                 username,
                 password: hash
             });
 
-
-            if(createdUser){
+            if (createdUser) {
                 resolve({
                     message: 'Đăng ký thành công',
                     code: 200,
                     data: createdUser
                 });
             }
-        }
-        catch (err) {
+        } catch (err) {
             reject(err);
         }
-    }) 
+    });
 }
+
 
 // Login User
 const loginUser = (userLogin) => {
