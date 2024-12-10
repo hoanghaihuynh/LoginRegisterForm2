@@ -56,5 +56,5 @@
 
 ## Thông tin tác giả và người hướng dẫn
 * **Tác giả:** Huỳnh Hoàng Hải
-* **Người hướng dẫn:** Anh Thanh Duy, Anh Huữ Tài
+* **Người hướng dẫn:** Anh Thanh Duy, Anh Hữu Tài
 * **Email:** honghi.hunh@gmail.com
