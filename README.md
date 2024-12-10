@@ -54,35 +54,7 @@
 
 * Giao diện người dùng sẽ chạy ở địa chỉ mặc định (ví dụ: http://localhost:3000).
 
-## Cấu trúc thư mục
-
-LoginRegisterForm2
-├── api/
-│   └── src/
-│       ├── controllers/
-│       ├── models/
-│       ├── routes/
-│       └── services/
-└── LoginRegisterFrontEnd/
-    ├── public/
-    └── src/
-        ├── components/
-        │   ├── ButtonComponent/
-        │   ├── InputForm/
-        │   ├── LoadingComponent/
-        │   └── Messages/
-        ├── hooks/
-        ├── pages/
-        │   ├── HomePage/
-        │   ├── LoginPage/
-        │   ├── ProfilePage/
-        │   └── SigninPage/
-        ├── redux/
-        │   └── slides/
-        ├── routes/
-        └── services/
-
 ## Thông tin tác giả và người hướng dẫn
 * **Tác giả:** Huỳnh Hoàng Hải
-* **Người hướng dẫn:** Anh Thanh Duy, Anh Huữ Tài
+* **Người hướng dẫn:** Anh Thanh Duy, Anh Hữu Tài
 * **Email:** honghi.hunh@gmail.com
